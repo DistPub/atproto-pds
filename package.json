@@ -58,7 +58,7 @@
     "@atproto/xrpc-server": "^0.7.3"
   },
   "devDependencies": {
-    "@atproto/pds-entryway": "npm:@atproto/pds@0.3.0-entryway.3",
+    "@types/node": "^18.19.56",
     "@did-plc/server": "^0.0.1",
     "@types/cors": "^2.8.12",
     "@types/disposable-email": "^0.2.0",
