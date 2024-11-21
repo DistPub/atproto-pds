@@ -194,6 +194,7 @@ export async function pipethrough(
     // while processing read-after-write operations.
     highWaterMark: 2 * 65536, // twice the default (64KiB)
   }
+  httpLogger.info(dispatchOptions, 'execute pipethrough')
 
   const { headers, body } = await pipethroughRequest(ctx, dispatchOptions)
 
@@ -277,6 +278,8 @@ async function pipethroughStream(
   successStreamFactory: Dispatcher.StreamFactory,
 ): Promise<void> {
   return new Promise<void>((resolve, reject) => {
+    httpLogger.info(dispatchOptions, 'execute pipethroughStream')
+
     void ctx.proxyAgent
       .stream(dispatchOptions, (upstream) => {
         if (upstream.statusCode >= 400) {
@@ -654,6 +657,8 @@ const defaultService = (
       return ctx.cfg.modService
     case ids.ComAtprotoModerationCreateReport:
       return ctx.cfg.reportService
+    case ids.ChatBskyConvoListConvos:
+      return ctx.cfg.bskyChatView
     default:
       return ctx.cfg.bskyAppView
   }

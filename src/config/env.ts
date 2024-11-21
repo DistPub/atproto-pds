@@ -85,6 +85,10 @@ export const readEnv = (): ServerEnvironment => {
     bskyAppViewDid: envStr('PDS_BSKY_APP_VIEW_DID'),
     bskyAppViewCdnUrlPattern: envStr('PDS_BSKY_APP_VIEW_CDN_URL_PATTERN'),
 
+    // chatview
+    bskyChatViewUrl: envStr('PDS_BSKY_CHAT_VIEW_URL'),
+    bskyChatViewDid: envStr('PDS_BSKY_CHAT_VIEW_DID'),
+
     // mod service
     modServiceUrl: envStr('PDS_MOD_SERVICE_URL'),
     modServiceDid: envStr('PDS_MOD_SERVICE_DID'),
@@ -214,6 +218,10 @@ export type ServerEnvironment = {
   bskyAppViewUrl?: string
   bskyAppViewDid?: string
   bskyAppViewCdnUrlPattern?: string
+
+  // chatview
+  bskyChatViewUrl?: string
+  bskyChatViewDid?: string
 
   // mod service
   modServiceUrl?: string
