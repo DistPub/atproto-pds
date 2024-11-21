@@ -194,6 +194,7 @@ export async function pipethrough(
     // while processing read-after-write operations.
     highWaterMark: 2 * 65536, // twice the default (64KiB)
   }
+  httpLogger.info(dispatchOptions, 'execute pipethrough')
 
   const { headers, body } = await pipethroughRequest(ctx, dispatchOptions)
 
