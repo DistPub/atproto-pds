@@ -278,6 +278,8 @@ async function pipethroughStream(
   successStreamFactory: Dispatcher.StreamFactory,
 ): Promise<void> {
   return new Promise<void>((resolve, reject) => {
+    httpLogger.info(dispatchOptions, 'execute pipethroughStream')
+
     void ctx.proxyAgent
       .stream(dispatchOptions, (upstream) => {
         if (upstream.statusCode >= 400) {
