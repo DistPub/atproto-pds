@@ -186,6 +186,18 @@ export const envToCfg = (env: ServerEnvironment): ServerConfig => {
     }
   }
 
+  let bskyChatViewCfg: ServerConfig['bskyChatView'] = null
+  if (env.bskyChatViewUrl) {
+    assert(
+      env.bskyChatViewDid,
+      'if bsky chatview service url is configured, must configure its did as well.',
+    )
+    bskyChatViewCfg = {
+      url: env.bskyChatViewUrl,
+      did: env.bskyChatViewDid,
+    }
+  }
+
   let modServiceCfg: ServerConfig['modService'] = null
   if (env.modServiceUrl) {
     assert(
@@ -310,6 +322,7 @@ export const envToCfg = (env: ServerEnvironment): ServerConfig => {
     moderationEmail: moderationEmailCfg,
     subscription: subscriptionCfg,
     bskyAppView: bskyAppViewCfg,
+    bskyChatView: bskyChatViewCfg,
     modService: modServiceCfg,
     reportService: reportServiceCfg,
     redis: redisCfg,
@@ -333,6 +346,7 @@ export type ServerConfig = {
   moderationEmail: EmailConfig | null
   subscription: SubscriptionConfig
   bskyAppView: BksyAppViewConfig | null
+  bskyChatView: BksyChatViewConfig | null
   modService: ModServiceConfig | null
   reportService: ReportServiceConfig | null
   redis: RedisScratchConfig | null
@@ -477,6 +491,11 @@ export type BksyAppViewConfig = {
   url: string
   did: string
   cdnUrlPattern?: string
+}
+
+export type BksyChatViewConfig = {
+  url: string
+  did: string
 }
 
 export type ModServiceConfig = {

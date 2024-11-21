@@ -654,6 +654,8 @@ const defaultService = (
       return ctx.cfg.modService
     case ids.ComAtprotoModerationCreateReport:
       return ctx.cfg.reportService
+    case ids.ChatBskyConvoListConvos:
+      return ctx.cfg.bskyChatView
     default:
       return ctx.cfg.bskyAppView
   }
