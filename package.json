@@ -53,7 +53,7 @@
     "@atproto/lexicon": "^0.4.3",
     "@atproto/oauth-provider": "^0.2.7",
     "@atproto/repo": "^0.5.5",
-    "@atproto/syntax": "^0.3.1",
+    "@atproto/syntax": "^0.4.1",
     "@atproto/xrpc": "^0.6.4",
     "@atproto/xrpc-server": "^0.7.3"
   },
