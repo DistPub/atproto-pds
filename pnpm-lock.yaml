@@ -3658,7 +3658,7 @@ snapshots:
   '@atproto/lexicon@0.4.3':
     dependencies:
       '@atproto/common-web': 0.3.1
-      '@atproto/syntax': 0.3.1
+      '@atproto/syntax': 0.4.1
       iso-datestring-validator: 2.2.2
       multiformats: 9.9.0
       zod: 3.23.8
